@@ -28,6 +28,7 @@ class Scraper
     students = {}
       
     media_sites = profile_page.css(".social-icon-container").children.css("a").map { |n| n.attribute('href').value}
+<<<<<<< HEAD
     media_sites.map do |site|
       if site.include?("twitter")
         students[:twitter] = site
@@ -37,6 +38,17 @@ class Scraper
         students[:github] = site
       else
         students[:blog] = site
+=======
+    links.map do |link|
+      if link.include?("twitter")
+        students[:twitter] = link
+      elsif link.include?("linkedin")
+        students[:linkedin] = link
+      elsif link.include?("github")
+        students[:github] = link
+      else
+        students[:blog] = link
+>>>>>>> d2247a62d8596e1f4ae542023ea894e4a5998936
       end
     end
     
